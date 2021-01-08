@@ -18,8 +18,6 @@ Create a wallet on an offline machine, as per the usual process (file
 
 After creating the wallet, go to Wallet -> Information.
 
-.. image:: png/wallet_info.png
-
 The Master Public Key of your wallet is the string shown in this popup
 window.  Transfer that key to your online machine somehow.
 
@@ -30,20 +28,12 @@ Create a watching-only version of your wallet
 On your online machine, open up Electrum and select File ->
 New/Restore. Enter a name for the wallet and select "Standard wallet".
 
-.. image:: png/standard_wallet.png
-
-Select "Use public or private keys"
-
-.. image:: png/public_or_private.png
+Select "Use a master key"
 
 Paste your master public key in the box.
 
-.. image:: png/restore_key.png
-
 Click Next to complete the creation of your wallet. 
 When you're done, you should see a popup informing you that you are opening a watching-only wallet.
-
-.. image:: png/watchingonly.png
 
 Then you should see the transaction history of your cold wallet.
 
@@ -51,38 +41,32 @@ Create an unsigned transaction
 ------------------------------
 
 Go to the "send" tab on your online watching-only wallet,
-input the transaction data and press "Preview". A window pops up:
+input the transaction data and click "Pay". 
 
-.. image:: png/unsigned.png
-
-
-Press "save" and save the transaction file somewhere on your computer. Close the
+Click "Advanced", then click "Finalize", then click "Export" and choose the "Export to file" option. 
+This will save the transaction file to a location on your computer which you specify. Close the
 window and transfer the transaction file to your offline
 machine (e.g. with a usb stick).
 
 Get your transaction signed
 ---------------------------
 
-On your offline wallet, select Tools -> Load transaction -> From file
-in the menu and select the transaction file created in the previous
-step.
+Transfer the transaction file you created from the step above to your 
+offline computer. Then, select Tools -> Load transaction -> From file
+in the menu and select the transaction file you just transferred. 
 
-.. image:: png/sign.png
-
-Press "sign". Once the transaction is signed, the Transaction ID
+Click "sign". Once the transaction is signed, the Transaction ID
 appears in its designated field.
 
-.. image:: png/signed.png
-
-Press save, store the file somewhere on your
-computer, and transfer it back to your online machine.
+Click save, then click "Export" and choose the "Export to file" option. This will 
+create a signed transaction file which you will need to transfer to your 
+online watching-only wallet. 
 
 Broadcast your transaction
 --------------------------
 
-
 On your online machine, select Tools -> Load transaction -> From File
 from the menu. Select the signed transaction file. In the window that
-opens up, press "broadcast". The transaction will be broadcasted over
+opens up, click "Broadcast". The transaction will be broadcasted over
 the Bitcoin network.
 
